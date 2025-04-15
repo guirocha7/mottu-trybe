@@ -17,5 +17,25 @@ class ProgramaClassificacaoAlunos
                 alunos.Add((nome, nota));
             }
             Console.WriteLine("Nome do Aluno:");
+        }
+
+        if (alunos.Count == 0)
+        {
+            Console.WriteLine("Nenhum dado de aluno foi inserido.");
+            return;
+        }
+
+        double media = CalcularMedia(alunos);
+        Console.WriteLine("Média da turma: " + media);
+    }
+
+    static double CalcularMedia(List<(string Nome, double Nota)> alunos)
+    {
+        double soma = 0;
+        foreach (var aluno in alunos)
+        {
+            soma += aluno.Nota;
+        }
+        return soma / alunos.Count;
     }
 }
