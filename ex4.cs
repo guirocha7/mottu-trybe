@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-class ProgramaClassificacaoAlunos
+class ex4programaclassificacaoalunos
 {
     static void Main(string[] args)
     {
@@ -27,6 +27,15 @@ class ProgramaClassificacaoAlunos
 
         double media = CalcularMedia(alunos);
         Console.WriteLine("Média da turma: " + media);
+
+        Console.WriteLine("Alunos com notas acima da média:");
+        foreach (var aluno in alunos)
+        {
+            if (aluno.Nota > media)
+            {
+                Console.WriteLine(aluno.Nome);
+            }
+        }
     }
 
     static double CalcularMedia(List<(string Nome, double Nota)> alunos)
